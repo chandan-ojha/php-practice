@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Factory Method Pattern.
+ *
+ * This allows interfaces for creating objects, but allow subclasses to determine which class to instantiate.
+ */
 abstract class VehicleFactoryMethod
 {
     abstract public function make($brand);
@@ -11,7 +15,7 @@ class CarFactory extends VehicleFactoryMethod
     {
         $car = null;
 
-        switch ($brand){
+        switch ($brand) {
             case "mercedes":
                 $car = new MercedesCar;
                 break;
@@ -19,6 +23,7 @@ class CarFactory extends VehicleFactoryMethod
                 $car = new ToyotaCar;
                 break;
         }
+
         return $car;
     }
 }
@@ -31,12 +36,13 @@ class BikeFactory extends VehicleFactoryMethod
 
         switch ($brand) {
             case "yamaha":
-                $bike = new Yamahabike;
+                $bike = new YamahaBike;
                 break;
             case "ducati":
                 $bike = new DucatiBike;
                 break;
         }
+
         return $bike;
     }
 }
@@ -57,7 +63,6 @@ interface BikeInterface
     public function assemble();
 
     public function paint();
-
 }
 
 class MercedesCar implements CarInterface
@@ -135,7 +140,6 @@ class DucatiBike implements BikeInterface
 $carFactoryInstance = new CarFactory;
 
 $mercedes = $carFactoryInstance->make('mercedes');
-
 echo $mercedes->design() . '<br/>';
 echo $mercedes->assemble() . '<br/>';
 echo $mercedes->paint() . '<br/>';

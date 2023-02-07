@@ -1,4 +1,9 @@
 <?php
+/**
+ * Abstract Factory Pattern.
+ *
+ * Unlike the simple factory and factory method pattern, an abstract factory is an interface to create of related objects without specifying/exposing their classes. We can also say that it provides an object of another factory that is responsible for creating required objects.
+ */
 
 abstract class AbstractVehicleFactory
 {
@@ -48,7 +53,6 @@ abstract class AbstractBikeVehicle extends AbstractVehicle
 {
 
 }
-
 
 class MercedesCar extends AbstractCarVehicle
 {
@@ -124,7 +128,7 @@ class DucatiBike extends AbstractBikeVehicle
 
 $bangladeshiFactoryInstance = new BangladeshiFactory;
 $car = $bangladeshiFactoryInstance->makeCar();
-echo $car->design() . '<br/>';;
+echo $car->design() . '<br/>';
 echo $car->assemble() . '<br/>';
 echo $car->paint() . '<br/>';
 
@@ -149,5 +153,3 @@ $bike = $usaFactoryInstance->makeBike();
 echo $bike->design() . '<br/>';
 echo $bike->assemble() . '<br/>';
 echo $bike->paint() . '<br/>';
-
-
