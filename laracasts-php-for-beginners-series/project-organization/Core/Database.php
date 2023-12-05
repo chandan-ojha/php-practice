@@ -1,6 +1,9 @@
 <?php
 
-//connect to MySQL Database
+namespace Core;
+
+use PDO;
+
 class Database
 {
     public $connection;
@@ -38,13 +41,12 @@ class Database
 
     public function findOrFail()
     {
-       $result = $this->find();
+        $result = $this->find();
 
-       if(!$result){
-           abort();
-       }
+        if (!$result) {
+            abort();
+        }
 
-       return $result;
+        return $result;
     }
-
 }
