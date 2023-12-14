@@ -2,8 +2,6 @@
 
 namespace Core;
 
-use Core\Middleware\Authenticated;
-use Core\Middleware\Guest;
 use Core\Middleware\Middleware;
 
 class Router
@@ -61,26 +59,16 @@ class Router
                 //apply the middleware
                 Middleware::resolve($route['middleware']);
 
-                /*if ($route['middleware']) {
-                    $middleware = Middleware::MAP[$route['middleware']];
-
-                    (new $middleware)->handle();
-                }*/
-
-
-                /*if ($route['middleware'] === 'guest') {
-                    (new Guest)->handle();
-                }
-
-                if ($route['middleware'] === 'auth') {
-                    (new Auth)->handle();
-                }*/
-
                 return require base_path('Http/controllers/' . $route['controller']);
             }
         }
 
         $this->abort();
+    }
+
+    public function previousUrl()
+    {
+        return $_SERVER['HTTP_REFERER'];
     }
 
     protected function abort($code = 404)
@@ -92,28 +80,3 @@ class Router
         die();
     }
 }
-
-//previous approach
-
-/*function routeToController($uri, $routes)
-{
-    if (array_key_exists($uri, $routes)) {
-        require base_path($routes[$uri]);
-    } else {
-        abort();
-    }
-}
-
-function abort($code = 404)
-{
-    http_response_code($code);
-
-    require base_path("views/{$code}.php");
-
-    die();
-}
-
-$routes = require base_path('routes.php');
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-
-routeToController($uri, $routes);*/
