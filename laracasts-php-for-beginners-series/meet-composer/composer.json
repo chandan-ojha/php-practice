@@ -6,7 +6,9 @@
       "email": "chandanojha776@gmail.com"
     }
   ],
-  "require": {},
+  "require": {
+    "illuminate/collections": "^10.37"
+  },
   "autoload": {
     "psr-4": {
       "Core\\": "Core/",
