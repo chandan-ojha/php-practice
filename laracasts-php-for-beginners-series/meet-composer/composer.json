@@ -14,5 +14,13 @@
       "Core\\": "Core/",
       "Http\\": "Http/"
     }
+  },
+  "require-dev": {
+    "pestphp/pest": "^2.28"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
   }
 }
