@@ -1,0 +1,16 @@
+{
+  "name": "user/meet-composer",
+  "authors": [
+    {
+      "name": "Chandan Ojha",
+      "email": "chandanojha776@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "Http\\": "Http/"
+    }
+  }
+}
