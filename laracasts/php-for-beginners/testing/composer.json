@@ -1,0 +1,26 @@
+{
+  "name": "user/meet-composer",
+  "authors": [
+    {
+      "name": "Chandan Ojha",
+      "email": "chandanojha776@gmail.com"
+    }
+  ],
+  "require": {
+    "illuminate/collections": "^10.37"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "Http\\": "Http/"
+    }
+  },
+  "require-dev": {
+    "pestphp/pest": "^2.28"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
