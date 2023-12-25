@@ -25,6 +25,6 @@ spl_autoload_register('autoload');
 
 
 (new Bike)->getType();
-(new Planet)->getName();
+// (new Planet)->getName();
 (new Planet_Mars)->getName();
 (new Spaceship)->launch();
