@@ -1,42 +1,28 @@
 <?php
-
 class Singleton
 {
-    private static $instance;
-
-    public static function getInstance()
-    {
-        if (null === self::$instance) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
+    private static $instances = [];
 
     private function __construct()
     {
+    }
 
+    public static function getInstance()
+    {
+        $class = get_called_class();
+
+        if (!isset(static::$instances[$class])) {
+            static::$instances[$class] = new static();
+        }
+
+        return static::$instances[$class];
     }
 
     private function __clone()
     {
-
     }
 
     public function __wakeup()
     {
-
-    }
-
-    public function sayHi()
-    {
-        echo 'Hi';
     }
 }
-
-$singleton = Singleton::getInstance();
-
-$singleton->sayHi();
-
-
-
