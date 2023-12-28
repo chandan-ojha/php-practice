@@ -1,4 +1,4 @@
-<h4 align="center"> !!! PHP Design Patterns !!! </h4>
+<h4 align="center"> !!! Design Patterns with PHP !!! </h4>
 
 <h5>Practice List</h5>
 
