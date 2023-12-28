@@ -1,4 +1,6 @@
 <?php
+
+// Singleton pattern ensures that only one object of a particular class is ever created.
 class Singleton
 {
     private static $instances = [];
