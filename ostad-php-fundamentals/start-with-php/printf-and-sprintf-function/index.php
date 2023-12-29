@@ -1,5 +1,7 @@
 <?php
 
+// printf() function
+
 $fname = "Chandan";
 $lname = "Ojha";
 $middlename = "Nothing";
@@ -20,3 +22,8 @@ $b = 27.155; //0027.155
 printf("%07.2f", $a);
 echo "\n";
 printf("%07.2f", $b);
+echo "\n";
+
+// sprintf() function
+$output = sprintf('My name is %3$s %1$s %2$s', $fname, $middlename, $lname);
+echo strtoupper($output);
